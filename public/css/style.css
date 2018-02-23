@@ -1,0 +1,144 @@
+body {
+    font-family: Raleway;
+}
+md-input-container {
+    margin-top: 14px;
+    margin-bottom: 0px;
+}
+
+.md-list-item-inner {
+    padding: 8px 0;
+}
+
+.md-list-item-text > * {
+    width: 100%;
+    white-space: nowrap;
+    overflow:hidden !important;
+    text-overflow: ellipsis;
+}
+
+md-list {
+    padding: 0 !important;
+}
+
+md-card-avatar > img {
+    fill: #fff;
+    padding-left: 5px;
+    width: 20px !important;
+    height: 20px !important;
+}
+
+md-card-avatar ng-md-icon {
+    font-size: 0.8em ;
+}
+
+
+md-card-avatar ng-md-icon svg {
+    fill: #fff;
+    padding-left: 5px;
+    width: 20px;
+    height: 20px;
+}
+
+md-card-header-text h1 {
+    margin: 0;
+    font-size: 1.1em !important;
+}
+
+md-card md-card-header {
+    padding:8px;
+    background-color: #2B6267;
+}
+
+md-card md-card-header md-card-avatar {
+    width: 30px;
+    height: 20px;
+}
+
+md-card md-card-header md-card-avatar+md-card-header-text{
+    color: #fff;
+    max-height: 30px;
+}
+
+.md-media-sm card-media{
+    width:5%;
+    height:5%;
+}
+
+.md-button.md-fab > ng-md-icon > svg {
+    position: absolute;
+    top: 5px;
+    left: 8px;
+}
+
+.number-box {
+    font-size: 35px;
+    font-family: Raleway;
+    font-weight: 100;
+    text-align: center;
+    line-height: normal;
+    color: #4BABB4;
+  }
+.md-toast-done .md-toast-content{
+    background: #38C118 !important;
+    text-align:center;
+    text-decoration-color: white;
+    opacity: 0.8;
+    font-size: large;
+
+}
+md-toast.md-top {
+    left: 40%;
+    margin-left: -100px;
+}
+
+md-toast.md-bottom {
+    left: 40%;
+    margin-left: -100px;
+}
+
+
+.mdl-card__title-text {
+    font-size: 100% !important;
+}
+
+.centerContainer{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+}
+.analytics-loading {
+	position: absolute;
+	top: 0;
+	margin-top: 0;
+	margin-left:-16px;
+}
+
+.dc-chart g.row text {
+    fill: black !important;
+    font-size: 13px;
+}
+
+#ezlink_vs_cash_by_month > svg > g .axis text {
+    text-anchor: end !important;
+    transform: rotate(-45deg);
+}
+#ezlink_vs_cash > svg > g .axis text {
+    text-anchor: end !important;
+    transform: rotate(-45deg);
+}
+#revenuebymonth > svg > g .axis text {
+    text-anchor: end !important;
+    transform: rotate(-45deg);
+}
+#food_count > svg > g .axis text {
+    text-anchor: end !important;
+    transform: rotate(-45deg);
+}
+#hourly_performance > svg > g .axis text {
+    text-anchor: end !important;
+    transform: rotate(-45deg);
+}

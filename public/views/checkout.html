@@ -1,0 +1,24 @@
+<div ng-app="CheckoutCtrl">
+    <!--<md-button class="md-raised md-primary">EZ-Link</md-button>-->
+    <!--<md-button class="md-raised md-warn" style="background-color:#913D59">Cash</md-button>-->
+
+    <div flex="100">
+        <md-content layout-padding align="center">
+            <main class="mdl-layout__content">
+                <div class="mdl-grid">
+                        <md-button aria-label="paymentMethod" ng-repeat="(key, value) in paymentArr track by $index"
+                                   class="mdl-card mdl-cell mdl-cell--4-col mdl-shadow--2dp"
+                                   style="max-height: 300px; max-width:500px"
+                                   ng-click="selectPayment(key)">
+                            <img ng-src="{{paymentArr[key].imageUrl}}"
+                                 style="max-height: 200px; max-width:400px"/>
+                            <div class="mdl-card__title">
+                                <h1 class="mdl-card__title-text">{{key}}</h1>
+                            </div>
+                        </md-button>
+
+                </div>
+            </main>
+        </md-content>
+    </div>
+</div>

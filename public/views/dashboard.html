@@ -1,0 +1,242 @@
+<div class="jumbotron text-center">
+    <!-- CONTENT -->
+    <div class="filter-toolbar internal-component md-whiteframe-1dp" layout="row" flex="none" >
+
+    </div>
+
+	<div class="internal-component md-whiteframe-1dp animated fadeIn" layout="column" flex="none">
+            <!-- INNER CONTENT COLUMN -->
+			<div layout-xs="column" layout-sm="column" layout-md="column" layout="row">
+                <!-- LEFT COLUMN -->
+				<div flex layout="column">
+
+                    <div flex="50" layout="row" layout-align="center">
+                        <md-card class="card-no-shadow" flex="50">
+                            <md-card-header>
+                                <md-card-avatar>
+                                    <ng-md-icon icon="assessment"></ng-md-icon>
+                                </md-card-avatar>
+                                <md-card-header-text>
+                                    <div layout="row">
+                                        <h1>Total - No. of Orders</h1>
+                                    </div>
+                                </md-card-header-text>
+                            </md-card-header>
+                            <md-card-content style="position:relative;">
+                                <number class="number-box" id="number_count" data="dashboard.result" updated="dashboard.updated" shown="dashboard.selected_data.total_order" ></number> 
+                            </md-card-content>
+                        </md-card>
+
+                        <md-card class="card-no-shadow" flex="50">
+                            <md-card-header>
+                                <md-card-avatar>
+                                    <ng-md-icon icon="assessment"></ng-md-icon>
+                                </md-card-avatar>
+                                <md-card-header-text>
+                                    <div layout="row">
+                                        <h1>Today - No. of Orders</h1>
+                                    </div>
+                                </md-card-header-text>
+                            </md-card-header>
+                            <md-card-content style="position:relative;">
+                                <number class="number-box" id="number_count" data="dashboard.result" updated="dashboard.updated" shown="dashboard.selected_data.today_order" ></number>
+                            </md-card-content>
+                        </md-card>
+                    </div>
+
+                    <md-card class="card-no-shadow" flex="none">
+                        <md-card-header>
+                            <md-card-avatar>
+                                <ng-md-icon icon="assessment"></ng-md-icon>
+                            </md-card-avatar>
+                            <md-card-header-text>
+                                <div layout="row">
+                                    <h1>Best Performing Day by Orders</h1>
+                                </div>
+                            </md-card-header-text>
+                        </md-card-header>
+                        <md-card-content style="position:relative;">
+                            <line-Chart-Day id="daily_performance" data="dashboard.selected_data.best_performing_day"></line-Chart-Day>
+                            <md-content ng-if="dashboard.visitsLoading" class="analytics-loading" flex layout="column" layout-align="center center" layout-fill>
+                                <md-progress-circular class="progress-circular" md-mode="indeterminate" ></md-progress-circular>
+                            </md-content>
+                        </md-card-content>
+                </md-card>
+                    
+                <md-card class="card-no-shadow" flex="none">
+                    <md-card-header>
+                        <md-card-avatar>
+                            <ng-md-icon icon="assessment"></ng-md-icon>
+                        </md-card-avatar>
+                        <md-card-header-text>
+                            <div layout="row">
+                                <h1>Hourly Performance by Orders</h1>
+                            </div>
+                        </md-card-header-text>
+                    </md-card-header>
+                    <md-card-content style="position:relative;">
+                        <line-Chart id="hourly_performance" data="dashboard.selected_data.best_performing_hour" ></line-Chart>
+                        <md-content ng-if="dashboard.visitsLoading" class="analytics-loading" flex layout="column" layout-align="center center" layout-fill>
+                            <md-progress-circular class="progress-circular" md-mode="indeterminate" ></md-progress-circular>
+                        </md-content>
+                    </md-card-content>
+                </md-card>
+                    
+
+                    
+
+            </div>
+            <!-- MIDDLE COLUMN -->
+			<div flex layout="column">
+                <div flex="50" layout="row" layout-align="center">
+                        <md-card class="card-no-shadow" flex="50">
+                            <md-card-header>
+                                <md-card-avatar>
+                                    <ng-md-icon icon="assessment"></ng-md-icon>
+                                </md-card-avatar>
+                                <md-card-header-text>
+                                    <div layout="row">
+                                        <h1>Total Revenue</h1>
+                                    </div>
+                                </md-card-header-text>
+                            </md-card-header>
+                            <md-card-content style="position:relative;">
+                                <number class="number-box" id="number_count" data="dashboard.result" updated="dashboard.updated" shown="dashboard.selected_data.total_revenue" ></number> 
+                            </md-card-content>
+                        </md-card>
+    
+                        <md-card class="card-no-shadow" flex="50">
+                            <md-card-header>
+                                <md-card-avatar>
+                                    <ng-md-icon icon="assessment"></ng-md-icon>
+                                </md-card-avatar>
+                                <md-card-header-text>
+                                    <div layout="row">
+                                        <h1>Today Revenue</h1>
+                                    </div>
+                                </md-card-header-text>
+                            </md-card-header>
+                            <md-card-content style="position:relative;">
+                                <number class="number-box" id="number_count" data="dashboard.result" updated="dashboard.updated" shown="dashboard.selected_data.today_revenue" ></number>
+                            </md-card-content>
+                        </md-card>
+                    </div>
+
+                    <md-card class="card-no-shadow" flex="none">
+                        <md-card-header>
+                            <md-card-avatar>
+                                <ng-md-icon icon="assessment"></ng-md-icon>
+                            </md-card-avatar>
+                            <md-card-header-text>
+                                <div layout="row">
+                                    <h1>Popular Food Choice</h1>
+                                </div>
+                            </md-card-header-text>
+                            <!--<md-card-avatar>
+                                <ng-md-icon icon="get_app"></ng-md-icon>
+                            </md-card-avatar>-->
+                        </md-card-header>
+                        <md-card-content style="position:relative;">
+                            <row-Chart id="food_count" data="dashboard.selected_data.popular_food_data"></row-Chart>
+                            <md-content ng-if="dashboard.visitsLoading" class="analytics-loading" flex layout="column" layout-align="center center" layout-fill>
+                                <md-progress-circular class="progress-circular" md-mode="indeterminate" ></md-progress-circular>
+                            </md-content>
+                        </md-card-content>
+                    </md-card>
+
+                    <md-card class="card-no-shadow" flex="none">
+                        <md-card-header>
+                            <md-card-avatar>
+                                <ng-md-icon icon="assessment"></ng-md-icon>
+                            </md-card-avatar>
+                            <md-card-header-text>
+                                <div layout="row">
+                                    <h1>Best Peforming Month By Revenue</h1>
+                                </div>
+                            </md-card-header-text>
+                        </md-card-header>
+                        <md-card-content style="position:relative;">
+                            <row-Chart id="revenuebymonth" data="dashboard.selected_data.monthly_by_revenue" ></row-Chart>
+                            <md-content ng-if="dashboard.visitsLoading" class="analytics-loading" flex layout="column" layout-align="center center" layout-fill>
+                                <md-progress-circular class="progress-circular" md-mode="indeterminate" ></md-progress-circular>
+                            </md-content>
+                        </md-card-content>
+                    </md-card>
+            </div>
+            
+            <!-- RIGHT COLUMN -->
+			<div flex layout="column">
+                <div flex="50" layout="row" layout-align="center">
+                    <md-card class="card-no-shadow" flex="50">
+                        <md-card-header>
+                            <md-card-avatar>
+                                <ng-md-icon icon="assessment"></ng-md-icon>
+                            </md-card-avatar>
+                            <md-card-header-text>
+                                <div layout="row">
+                                    <h1>No. paid via Cash</h1>
+                                </div>
+                            </md-card-header-text>
+                        </md-card-header>
+                        <md-card-content style="position:relative;">
+                            <number class="number-box" id="number_count" data="dashboard.result" updated="dashboard.updated" shown="dashboard.selected_data.cash" ></number> 
+                        </md-card-content>
+                    </md-card>
+        
+                    <md-card class="card-no-shadow" flex="50">
+                        <md-card-header>
+                            <md-card-avatar>
+                                <ng-md-icon icon="assessment"></ng-md-icon>
+                            </md-card-avatar>
+                            <md-card-header-text>
+                                <div layout="row">
+                                    <h1>No. paid via Ezink</h1>
+                                </div>
+                            </md-card-header-text>
+                        </md-card-header>
+                        <md-card-content style="position:relative;">
+                            <number class="number-box" id="number_count" data="dashboard.result" updated="dashboard.updated" shown="dashboard.selected_data.ezlink" ></number>
+                        </md-card-content>
+                    </md-card>
+                </div>
+                <md-card class="card-no-shadow" flex="none">
+                    <md-card-header>
+                        <md-card-avatar>
+                            <ng-md-icon icon="assessment"></ng-md-icon>
+                        </md-card-avatar>
+                        <md-card-header-text>
+                            <div layout="row">
+                                <h1>Cash Vs Ezlink</h1>
+                            </div>
+                        </md-card-header-text>
+                    </md-card-header>
+                    <md-card-content style="position:relative;">
+                        <row-Chart id="ezlink_vs_cash" data="dashboard.selected_data.ezlink_vs_cash" ></row-Chart>
+                        <md-content ng-if="dashboard.visitsLoading" class="analytics-loading" flex layout="column" layout-align="center center" layout-fill>
+                            <md-progress-circular class="progress-circular" md-mode="indeterminate" ></md-progress-circular>
+                        </md-content>
+                    </md-card-content>
+                </md-card>
+
+                <md-card class="card-no-shadow" flex="none">
+                    <md-card-header>
+                        <md-card-avatar>
+                            <ng-md-icon icon="assessment"></ng-md-icon>
+                        </md-card-avatar>
+                        <md-card-header-text>
+                            <div layout="row">
+                                <h1>Cash Vs Ezlink</h1>
+                            </div>
+                        </md-card-header-text>
+                    </md-card-header>
+                    <md-card-content style="position:relative;">
+                        <row-Chart id="ezlink_vs_cash_by_month" data="dashboard.selected_data.ezlink_vs_cash_by_month" ></row-Chart>
+                        <md-content ng-if="dashboard.visitsLoading" class="analytics-loading" flex layout="column" layout-align="center center" layout-fill>
+                            <md-progress-circular class="progress-circular" md-mode="indeterminate" ></md-progress-circular>
+                        </md-content>
+                    </md-card-content>
+                </md-card>
+                    
+            </div>
+    </div>
+</div>
