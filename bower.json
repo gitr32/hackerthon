@@ -1,0 +1,23 @@
+{
+  "name": "angular",
+  "version": "1.0.0",
+  "dependencies": {
+    "bootstrap": "latest",
+    "angular": "latest",
+    "angular-route": "latest",
+    "angular-animate": "latest",
+    "angular-material": "latest",
+    "angular-material-icons": "latest",
+    "angular-websocket":"latest",
+    "material-design-lite":"latest",
+    "firebase":"latest",
+    "angularfire":"latest",
+    "dcjs": "latest",
+    "dc-addons": "latest",
+    "jquery":"latest",
+    "moment":"latest"
+  },
+  "resolutions": {
+    "firebase": "^4.5.0"
+  }
+}
