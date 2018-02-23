@@ -110,8 +110,7 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
-# Remove library
-public/libs/*
+
 
 # Remove workspace
 .idea/workspace.xml
