@@ -11,6 +11,18 @@ angular.module('RaidParticipationCtrl', [])
     $scope.raid = $firebaseObject(raidRef);
 
     var price = 0;
+
+    $scope.raidCompleted = function() {
+        console.log('raid completed');
+        if ($scope.currentMemberCount == $scope.maxMemberCount) {
+            return true;
+        }
+        return false;
+    }
+    $scope.redirect = function() {
+        $location.path('/raidEvaluation');
+    }
+
     //method to assign total price to the cart
     checkoutItem.$loaded().then(function (menu) {
         //to bind the food menu dynamically
@@ -34,7 +46,7 @@ angular.module('RaidParticipationCtrl', [])
         
         price = totalPrice;
         
-        $scope.shippingCost = 3.55;
+        $scope.shippingCost = 130.3;
     
         $scope.raid.$loaded().then(function (response) {
             const currentMemberCount = response.currentMemberCount;

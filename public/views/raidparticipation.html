@@ -37,6 +37,12 @@
                     Total: {{totalCost}}<br>
                 </div>
             </div>
+            <div>
+                <md-button ng-if="raidCompleted()" class="md-raised md-primary" ng-click="redirect()">
+                        Raid Evaluation
+                </md-button>
+            </div>
+            
         </div>
     </div>
     
