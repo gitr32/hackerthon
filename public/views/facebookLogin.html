@@ -1,0 +1,21 @@
+<div>
+  <!--<md-button class="md-raised md-primary">EZ-Link</md-button>-->
+  <!--<md-button class="md-raised md-warn" style="background-color:#913D59">Cash</md-button>-->
+  
+  <div flex="100">
+      <md-content layout-padding align="center">
+          <main class="mdl-layout__content">
+              <div class="mdl-grid">
+                    <md-button ng-if="accessTokenExists()" class="md-raised md-primary" ng-click="checkFacebookLogin()">
+                        Facebook Login
+                    </md-button>
+                    <div class="fb-share-button" 
+                        data-href={{shareURL}} 
+                        data-layout="button">
+                    </div>
+                </div>
+          </main>
+      </md-content>
+  </div>
+  
+</div>

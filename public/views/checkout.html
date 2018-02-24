@@ -1,24 +1,59 @@
 <div ng-app="CheckoutCtrl">
-    <!--<md-button class="md-raised md-primary">EZ-Link</md-button>-->
-    <!--<md-button class="md-raised md-warn" style="background-color:#913D59">Cash</md-button>-->
-
     <div flex="100">
-        <md-content layout-padding align="center">
-            <main class="mdl-layout__content">
-                <div class="mdl-grid">
-                        <md-button aria-label="paymentMethod" ng-repeat="(key, value) in paymentArr track by $index"
-                                   class="mdl-card mdl-cell mdl-cell--4-col mdl-shadow--2dp"
-                                   style="max-height: 300px; max-width:500px"
-                                   ng-click="selectPayment(key)">
-                            <img ng-src="{{paymentArr[key].imageUrl}}"
-                                 style="max-height: 200px; max-width:400px"/>
-                            <div class="mdl-card__title">
-                                <h1 class="mdl-card__title-text">{{key}}</h1>
-                            </div>
-                        </md-button>
+        <h2>Checkout</h2>
 
-                </div>
-            </main>
+        <md-content layout-padding>
+            <div>
+                <form name="checkoutForm">
+
+                    <div layout-gt-sm="row">
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>First name</label>
+                            <input ng-model="user.firstName" required>
+                        </md-input-container>
+
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Last name</label>
+                            <input ng-model="user.lastName" required>
+                        </md-input-container>
+                    </div>
+
+                    <div layout-gt-sm="row">
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Address</label>
+                            <input ng-model="user.address" required>
+                        </md-input-container>
+
+                        <md-input-container class="md-block">
+                            <label>Postal Code</label>
+                            <input name="postalCode" ng-model="user.postalCode" placeholder="123456" required ng-pattern="/^[0-9]{5}$/" md-maxlength="6">
+
+                            <div ng-messages="userForm.postalCode.$error" role="alert" multiple>
+                                <div ng-message="required" class="my-message">You must supply a postal code.</div>
+                                <div ng-message="pattern" class="my-message">That doesn't look like a valid postal code.
+                                </div>
+                                <div ng-message="md-maxlength" class="my-message">
+                                    Don't use the long version silly...we don't need to be that specific...
+                                </div>
+                            </div>
+                        </md-input-container>
+                    </div>
+
+                    <div layout-gt-sm="row" class="form-row">
+                        <label for="card-element">
+                            Credit or debit card
+                        </label>
+                        <div id="card-element">
+                            <!-- A Stripe Element will be inserted here. -->
+                        </div>
+
+                        <!-- Used to display form errors. -->
+                        <div id="card-errors" role="alert"></div>
+                    </div>
+
+                </form>
+            </div>
         </md-content>
+        <md-button class="md-raised md-primary" href="/checkout">Checkout</md-button>
     </div>
 </div>

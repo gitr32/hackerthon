@@ -1,87 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
-    <base href="/">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<base href="/">
 
-    <title>Starter Node and Angular</title>
+	<title>Starter Node and Angular</title>
 
-    <!-- CSS -->
+	<!-- CSS -->
+	
+	<link rel="stylesheet" href="libs/angular-material/angular-material.css">
+	<link rel="stylesheet" href="libs/angular-material-icons/angular-material-icons.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
+	
+	<!--MATERIAL DESIGN LITE-->
+	<link rel="stylesheet" href="libs/material-design-lite/material.min.css"> 
+	<!--BOOTSTRAP STYLESHEET-->
+	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="libs/dc-addons/dist/dc-addons.min.css">
+	<link rel="stylesheet" href="libs/dcjs/dc.min.css">
+	<link rel="stylesheet" href="css/style.css"> <!-- custom styles -->
 
-    <link rel="stylesheet" href="libs/angular-material/angular-material.css">
-    <link rel="stylesheet" href="libs/angular-material-icons/angular-material-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<!-- FONTS -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
 
-    <!--MATERIAL DESIGN LITE-->
-    <link rel="stylesheet" href="libs/material-design-lite/material.min.css">
-    <!--BOOTSTRAP STYLESHEET-->
-    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="libs/dc-addons/dist/dc-addons.min.css">
-    <link rel="stylesheet" href="libs/dcjs/dc.min.css">
-    <link rel="stylesheet" href="css/style.css"> <!-- custom styles -->
+	<!--ANGULAR FIREBASE-->
+	<script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+	<script>
+		// Initialize Firebase
+		var config = {
+			apiKey: "AIzaSyBb03-IsuuySE6A4Q_CI9tSxzyFQgNqr28",
+			authDomain: "epayment-f5b97.firebaseapp.com",
+			databaseURL: "https://epayment-f5b97.firebaseio.com",
+			projectId: "epayment-f5b97",
+			storageBucket: "epayment-f5b97.appspot.com",
+			messagingSenderId: "277788509737"
+		};
+		firebase.initializeApp(config);
+	</script>
 
-    <!-- FONTS -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
+	<!-- JS -->
+	<script src="libs/angular/angular.min.js"></script>
+	<script src="libs/angular-route/angular-route.min.js"></script>
+	<script src="libs/angular-animate/angular-animate.min.js"></script>
+	<script src="libs/angular-aria/angular-aria.min.js"></script>
+	<script src="libs/angular-material/angular-material.min.js"></script>
+	<script src="libs/angular-material-icons/angular-material-icons.min.js"></script>
+	<script src="libs/angular-websocket/dist/angular-websocket.js"></script>
+	<!-- Angularfire -->
+	<script src="libs/angularfire/dist/angularfire.min.js"></script>
+	<!-- D3 & DC -->
+	<script src="libs/d3/d3.js"></script>
+	<script src="libs/crossfilter2/crossfilter.min.js"></script>
+	<script src="libs/dcjs/dc.js"></script>
+	<script src="libs/dc-addons/dist/dc-addons.js"></script>
+	<!--MATERIAL DESIGN LITE JAVASCRIPT & FONT STYLE SHEET-->
+	<script src="libs/material-design-lite/material.min.js"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-    <!--ANGULAR FIREBASE-->
-    <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
-    <script>
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyBb03-IsuuySE6A4Q_CI9tSxzyFQgNqr28",
-            authDomain: "epayment-f5b97.firebaseapp.com",
-            databaseURL: "https://epayment-f5b97.firebaseio.com",
-            projectId: "epayment-f5b97",
-            storageBucket: "epayment-f5b97.appspot.com",
-            messagingSenderId: "277788509737"
-        };
-        firebase.initializeApp(config);
-    </script>
-
-    <!-- JS -->
-    <script src="libs/angular/angular.min.js"></script>
-    <script src="libs/angular-route/angular-route.min.js"></script>
-    <script src="libs/angular-animate/angular-animate.min.js"></script>
-    <script src="libs/angular-aria/angular-aria.min.js"></script>
-    <script src="libs/angular-material/angular-material.min.js"></script>
-    <script src="libs/angular-material-icons/angular-material-icons.min.js"></script>
-    <script src="libs/angular-websocket/dist/angular-websocket.js"></script>
-    <!-- Angularfire -->
-    <script src="libs/angularfire/dist/angularfire.min.js"></script>
-    <!-- D3 & DC -->
-    <script src="libs/d3/d3.js"></script>
-    <script src="libs/crossfilter2/crossfilter.min.js"></script>
-    <script src="libs/dcjs/dc.js"></script>
-    <script src="libs/dc-addons/dist/dc-addons.js"></script>
-    <!--MATERIAL DESIGN LITE JAVASCRIPT & FONT STYLE SHEET-->
-    <script src="libs/material-design-lite/material.min.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
-    <!-- ANGULAR CUSTOM -->
-    <script src="js/controllers/MainCtrl.js"></script>
-    <script src="js/controllers/DashboardCtrl.js"></script>
-    <script src="js/services/DashboardService.js"></script>
-    <script src="js/directives/DashboardDirective.js"></script>
-    <!--<script src="js/controllers/NerdCtrl.js"></script>-->
-    <!--<script src="js/services/NerdService.js"></script>-->
-    <!--<script src="js/controllers/GeekCtrl.js"></script>-->
-    <!--<script src="js/services/GeekService.js"></script>-->
-    <script src="js/appRoutes.js"></script>
-    <script src="js/controllers/CheckoutCtrl.js"></script>
+	<!-- ANGULAR CUSTOM -->
+	<script src="js/controllers/MainCtrl.js"></script>
+	<script src="js/controllers/DashboardCtrl.js"></script>
+	<script src="js/services/DashboardService.js"></script>
+	<script src="js/directives/DashboardDirective.js"></script>
+	<script src="js/appRoutes.js"></script>
+	<script src="js/controllers/CartCtrl.js"></script>
+	<script src="js/controllers/CheckoutCtrl.js"></script>
     <script src="js/controllers/ConfirmCtrl.js"></script>
-    <script src="js/controllers/SelectedItem.js"></script>
-    <script src="js/appDirectives.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/controllers/FacebookCtrl.js"></script>
+	<script src="js/appDirectives.js"></script>
+	<script src="js/app.js"></script>
+	<script src="https://js.stripe.com/v3/"></script>
 
-    <!--JQUERY-->
-    <script src="libs/jquery/dist/jquery.min.js"></script>
-    <!--BOOTSTRAP JAVASCRIPT-->
-    <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!--MOMENT.JS -->
-    <script src="libs/moment/moment.js"></script>
+	<!--JQUERY-->
+	<script src="libs/jquery/dist/jquery.min.js"></script>
+	<!--BOOTSTRAP JAVASCRIPT-->
+	<script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+	<!--MOMENT.JS -->
+	<script src="libs/moment/moment.js"></script>
+
 
 
 </head>
