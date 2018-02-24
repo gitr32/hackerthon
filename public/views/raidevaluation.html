@@ -10,18 +10,22 @@
 </head>
 <body >
     <h1 style="text-align: center">Raid Evaluation</h1>
-    <div style="display: flex ; flex: 1;">
-        <div style="flex: 3; height: 300px;  background-color: red;"></div>
+    <h3 style="text-align: center">Total Group Discount Accomplished: {{groupDiscountPercentage}}</h3>
+    <div style="text-align: center;">
+            <img ng-src="{{imageURL}}" style="max-height: 250px; height:200px; max-width:300px"/>
+            <br/>
+            <span>{{itemName}}</span><br/>
+            <span>{{itemCategory}}</span>
     </div>
-    <br>    
-    <div style="flex: 1; color:rgb(55, 54, 54); padding: 20px;">
+    <br>
+    <div style="text-align:center; color:rgb(55, 54, 54); padding: 20px;">
             Original Price: {{price}} <br>
             Individual Discount: {{individualDiscount}}<br>
             Group Discount: {{groupDiscount}}<br>
-            Shipping: {{shipping}}<br>
-            <hr text-align= "center" width="10%">
-            Total: {{total}}<br>
+            Shipping: {{shippingCost}}<br>
+            <b>Total: {{totalCost}}</b><br>
     </div>
+
 
 
 </body>

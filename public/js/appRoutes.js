@@ -43,6 +43,7 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 		})
 		.when('/raidEvaluation',{
 			templateUrl: 'views/raidevaluation.html',
+			controller: 'RaidParticipationController'
 		})
 		.when('/raidInfo',{
 			templateUrl: 'views/raidInfo.html',
