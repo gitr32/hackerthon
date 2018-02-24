@@ -41,6 +41,13 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 			templateUrl: 'views/raidparticipation.html',
 			controller: 'RaidParticipationController'
 		})
+		.when('/raidEvaluation',{
+			templateUrl: 'views/raidevaluation.html',
+		})
+		.when('/raidInfo',{
+			templateUrl: 'views/raidInfo.html',
+		})
+		
 		;
 
 	 $locationProvider.html5Mode(true);
