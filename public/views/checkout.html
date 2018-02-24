@@ -4,7 +4,7 @@
 
         <md-content layout-padding>
             <div>
-                <form name="checkoutForm">
+                <form name="checkoutForm" action="/charge" method="post" id="payment-form">
 
                     <div layout-gt-sm="row">
                         <md-input-container class="md-block" flex-gt-sm>
@@ -26,14 +26,11 @@
 
                         <md-input-container class="md-block">
                             <label>Postal Code</label>
-                            <input name="postalCode" ng-model="user.postalCode" placeholder="123456" required ng-pattern="/^[0-9]{5}$/" md-maxlength="6">
+                            <input name="postalCode" ng-model="user.postalCode" placeholder="123456" required md-maxlength="6">
 
                             <div ng-messages="userForm.postalCode.$error" role="alert" multiple>
                                 <div ng-message="required" class="my-message">You must supply a postal code.</div>
                                 <div ng-message="pattern" class="my-message">That doesn't look like a valid postal code.
-                                </div>
-                                <div ng-message="md-maxlength" class="my-message">
-                                    Don't use the long version silly...we don't need to be that specific...
                                 </div>
                             </div>
                         </md-input-container>
@@ -43,17 +40,18 @@
                         <label for="card-element">
                             Credit or debit card
                         </label>
-                        <div id="card-element">
+                    </div>
+                    <div>
+                        <div style="width: 30em" id="card-element">
                             <!-- A Stripe Element will be inserted here. -->
                         </div>
-
                         <!-- Used to display form errors. -->
-                        <div id="card-errors" role="alert"></div>
+                        <span style="width: 30em; height: 2em; letter-spacing: 0em" id="card-errors" role="alert"></span>
                     </div>
-
+                    <br>
+                    <md-button type="submit" class="md-raised md-primary">Checkout</md-button>
                 </form>
             </div>
         </md-content>
-        <md-button class="md-raised md-primary" href="/checkout">Checkout</md-button>
     </div>
 </div>
