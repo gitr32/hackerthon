@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+</head>
+<body>
+<div class="container">
+    <!--<div class="mdl-card__actions" ng-click="" style="width:5%">Back</div>-->
+    <br>
+    <br>
+    <!--<div ng-repeat="items in selectedItem">-->
+    <table>
+        <tr>
+            <td>
+                <div layout="row" layout-wrap>
+                    <img ng-src="{{selectedItem.imageUrl}}"
+                         style="margin: auto;width:80%;height:80%;border: 3px;padding: 10px;"/>
+                </div>
+            </td>
+            <td>
+                <md-input-container class="md-block md-body-2" style="width:500px">
+                    <b>Dimensions:</b>
+                    <br>
+                    {{dimensions.length}}x{{dimensions.breadth}}x{{dimensions.height}} mm
+                </md-input-container>
+                <br>
+                <md-button class="md-raised md-primary" ng-click="">Add To Cart</md-button>
+            </td>
+        </tr>
+    </table>
+
+    <!--</div>-->
+</div>
+</body>
+</html>
+

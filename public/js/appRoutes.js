@@ -25,6 +25,14 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 			templateUrl: 'views/checkout.html',
 			controller: 'CheckoutController'
 		})
+		.when('/selectedItem',{
+			templateUrl: 'views/selectedItem.html',
+			controller: 'SelectedItemController'
+		})
+		.when('/facebookLogin',{
+			templateUrl: 'views/facebookLogin.html',
+			controller: 'FacebookController'
+		})
 		;
 
 	 $locationProvider.html5Mode(true);

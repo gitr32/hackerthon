@@ -67,7 +67,8 @@
 	<script src="js/appRoutes.js"></script>
 	<script src="js/controllers/CartCtrl.js"></script>
 	<script src="js/controllers/CheckoutCtrl.js"></script>
-	<script src="js/controllers/ConfirmCtrl.js"></script>
+    <script src="js/controllers/ConfirmCtrl.js"></script>
+    <script src="js/controllers/FacebookCtrl.js"></script>
 	<script src="js/appDirectives.js"></script>
 	<script src="js/app.js"></script>
 	<script src="https://js.stripe.com/v3/"></script>
@@ -83,58 +84,60 @@
 
 </head>
 <body ng-app="VAProject">
-	<md-toolbar class="dashboard-toolbar md-whiteframe-1dp">
-		<div class="md-toolbar-tools" style="background:#333333">
-			<!--
-			<md-button class="md-icon-button" aria-label="dehaze" ui-sref="menu" ng-click="toggleMenu()">
-				<md-tooltip md-direction="bottom"> Menu </md-tooltip>
-				<ng-md-icon icon="dehaze"></ng-md-icon>
-			</md-button>
-			-->
-			<div class="bf-logo">Point-of-Sale System</div>
-			<md-button class="md-icon-button" aria-label="payment" ui-sref="menu" href="/">
-				<md-tooltip md-direction="bottom"> Point-of-Sale System </md-tooltip>
-				<ng-md-icon icon="payment"></ng-md-icon>
-			</md-button>	
-			<md-button class="md-icon-button" aria-label="important_devices" ui-sref="menu" href="/dashboard">
-					<md-tooltip md-direction="bottom"> Dashboard </md-tooltip>
-					<ng-md-icon icon="important_devices"></ng-md-icon>
-			</md-button>
-			<md-nav-bar class="dashboard-nav-bar" md-selected-nav-item="dashboard.currentNavItem" nav-bar-aria-label="navigation links" flex>
-				<span flex></span>
-				<div class="dashboard-nav-bar-btn" layout="row">
-					<md-button class="md-icon-button" aria-label="Logout" ui-sref="login">
-						<md-tooltip md-direction="bottom"> Logout </md-tooltip>
-						<ng-md-icon icon="logout"></ng-md-icon>
-					</md-button>
-				</div>
-			</md-nav-bar>
-		</div>
-	</md-toolbar>
+<md-toolbar class="dashboard-toolbar md-whiteframe-1dp">
+    <div class="md-toolbar-tools" style="background:#333333">
+        <!--
+        <md-button class="md-icon-button" aria-label="dehaze" ui-sref="menu" ng-click="toggleMenu()">
+            <md-tooltip md-direction="bottom"> Menu </md-tooltip>
+            <ng-md-icon icon="dehaze"></ng-md-icon>
+        </md-button>
+        -->
+        <div class="bf-logo">Point-of-Sale System</div>
+        <md-button class="md-icon-button" aria-label="payment" ui-sref="menu" href="/">
+            <md-tooltip md-direction="bottom"> Point-of-Sale System</md-tooltip>
+            <ng-md-icon icon="payment"></ng-md-icon>
+        </md-button>
+        <!--<md-button class="md-icon-button" aria-label="important_devices" ui-sref="menu" href="/dashboard">-->
+        <!--<md-tooltip md-direction="bottom"> Dashboard </md-tooltip>-->
+        <!--<ng-md-icon icon="important_devices"></ng-md-icon>-->
+        <!--</md-button>-->
+        <md-nav-bar class="dashboard-nav-bar" md-selected-nav-item="dashboard.currentNavItem"
+                    nav-bar-aria-label="navigation links" flex>
+            <span flex></span>
+            <div class="dashboard-nav-bar-btn" layout="row">
+                <md-button class="md-icon-button" aria-label="Logout" ui-sref="login">
+                    <md-tooltip md-direction="bottom"> Logout</md-tooltip>
+                    <ng-md-icon icon="logout"></ng-md-icon>
+                </md-button>
+            </div>
+        </md-nav-bar>
+    </div>
+</md-toolbar>
 
-	<!--
-	<md-sidenav class="md-sidenav-left" md-component-id="left" >
-		<md-toolbar class="md-theme-indigo">
-			<h1 class="md-toolbar-tools">Disabled Backdrop</h1>
-		</md-toolbar>
+<!--
+<md-sidenav class="md-sidenav-left" md-component-id="left" >
+    <md-toolbar class="md-theme-indigo">
+        <h1 class="md-toolbar-tools">Disabled Backdrop</h1>
+    </md-toolbar>
 
-		<md-content layout-margin>
-			<p> This sidenav is not showing any backdrop, where users can click on it, to close the sidenav. </p>
-			<md-button ng-click="toggleMenu()" class="md-accent">
-				  Close this Sidenav
-			</md-button>
-		</md-content>
-	</md-sidenav>
-	-->
+    <md-content layout-margin>
+        <p> This sidenav is not showing any backdrop, where users can click on it, to close the sidenav. </p>
+        <md-button ng-click="toggleMenu()" class="md-accent">
+              Close this Sidenav
+        </md-button>
+    </md-content>
+</md-sidenav>
+-->
 
-	<!--Material Design Lite Stylesheet CDN-->
-	<link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
-	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,500,400italic,700,700italic' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="//storage.googleapis.com/code.getmdl.io/1.0.1/material.teal-red.min.css" />
+<!--Material Design Lite Stylesheet CDN-->
+<link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,500,400italic,700,700italic'
+      rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="//storage.googleapis.com/code.getmdl.io/1.0.1/material.teal-red.min.css"/>
 
-	
-	<!-- ANGULAR DYNAMIC CONTENT -->
-	<div ng-view></div>
+
+<!-- ANGULAR DYNAMIC CONTENT -->
+<div ng-view></div>
 
 
 </body>
