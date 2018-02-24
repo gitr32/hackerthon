@@ -1,41 +1,43 @@
 angular.module('MainCtrl', [])
-    .controller('MainController', ['$scope', '$routeParams', '$firebaseArray', '$firebaseObject', '$firebaseAuth', '$mdDialog', 'checkOutItems', '$location', '$websocket', '$q', 'websocketService', 'sessionService', function ($scope, $routeParams, $firebaseArray, $firebaseObject, $firebaseAuth, $mdDialog, checkOutItems, $location, $websocket, $q, websocketService, sessionService) {
+    .controller('MainController', ['$scope', '$routeParams', '$firebaseArray', '$firebaseObject', '$firebaseAuth', '$mdDialog', 'checkOutItems', '$location', '$websocket', '$q', 'websocketService', 'sessionService', 'selectedItem', function ($scope, $routeParams, $firebaseArray, $firebaseObject, $firebaseAuth, $mdDialog, checkOutItems, $location, $websocket, $q, websocketService, sessionService, selectedItem) {
 
 
-        var menuRef = firebase.database().ref().child('Menu');
-        // $scope.menuArr = $firebaseArray(menuRef);
-        $scope.menuArr = $firebaseObject(menuRef);
-        // console.log("menuarr is: ", $scope.menuArr);
-        var menuArrVar = $scope.menuArr;
+        // var menuRef = firebase.database().ref().child('Menu');
+        // // $scope.menuArr = $firebaseArray(menuRef);
+        // $scope.menuArr = $firebaseObject(menuRef);
+        // // console.log("menuarr is: ", $scope.menuArr);
+        // var menuArrVar = $scope.menuArr;
+        // $scope.foodList = [];
+        // $scope.totalPrice = 0;
+        // $scope.checkBox = {}
+        var fashionRef = firebase.database().ref().child('FashionItem')
+        $scope.fashionArr = $firebaseArray(fashionRef);
 
-        $scope.foodList = [];
+        $scope.selectItem = function (event, fashionItem, index) {
+            // console.log("event is: ", event)
+            // console.log("event is: ", fashionItem)
+            // console.log("event is: ", index)
+            selectedItem.setVal(fashionItem);
+            $location.path('/selectedItem');
 
-        // if (JSON.parse(sessionService.get('foodList')) !== null) {
-        //     $scope.foodList = JSON.parse(sessionService.get('foodList'));
-        // }
 
-        $scope.totalPrice = 0;
+        }
 
-        $scope.checkBox = {}
 
-        // if (JSON.parse(sessionService.get('checkBox')) !== null) {
-        //     $scope.checkBox = JSON.parse(sessionService.get('checkBox'));
-        // }
-
-        menuArrVar.$loaded().then(function (menu) {
-            //to bind the food menu dynamically
-            //must first check for keys, then bind it to the array
-            for (var key in menu) {
-                if (key !== 'forEach' && key.substr(0, 1) !== '$') {
-                    $scope.checkBox[key] = {
-                        's': false,
-                        'm': false,
-                        'l': false
-                    }
-                }
-
-            }
-        })
+        // menuArrVar.$loaded().then(function (menu) {
+        //     //to bind the food menu dynamically
+        //     //must first check for keys, then bind it to the array
+        //     for (var key in menu) {
+        //         if (key !== 'forEach' && key.substr(0, 1) !== '$') {
+        //             $scope.checkBox[key] = {
+        //                 's': false,
+        //                 'm': false,
+        //                 'l': false
+        //             }
+        //         }
+        //
+        //     }
+        // })
 
 
         // $scope.checkBox = {
@@ -58,63 +60,58 @@ angular.module('MainCtrl', [])
 
         //for checking of foodList
         var temp = [];
-        $scope.selectFood = function (ev, food, index, foodList, checkBox) {
-            //set small size as default
-            checkBox[food.name]['s'] = true;
-            //selected food is small on default
-            var foodSize = {
-                s: {
-                    amount: menuArrVar[food.name]['price']['s'],
-                    qty: 1
-                },
-                m: {
-                    amount: 0,
-                    qty: 0
-                },
-                l: {
-                    amount: 0,
-                    qty: 0
-                }
-            }
+        // $scope.selectFood = function (ev, food, index, foodList, checkBox) {
+        //     //set small size as default
+        //     checkBox[food.name]['s'] = true;
+        //     //selected food is small on default
+        //     var foodSize = {
+        //         s: {
+        //             amount: menuArrVar[food.name]['price']['s'],
+        //             qty: 1
+        //         },
+        //         m: {
+        //             amount: 0,
+        //             qty: 0
+        //         },
+        //         l: {
+        //             amount: 0,
+        //             qty: 0
+        //         }
+        //     }
+        //
+        //     //add the selected food item into the list
+        //     if (temp[food.name] === undefined) {
+        //         var foodItem = [food.name, foodSize];
+        //
+        //         foodList.push(foodItem);
+        //
+        //
+        //         // calculate the price
+        //         $scope.totalPrice = calculateTotalPrice(foodList);
+        //
+        //         //this is to ensure that owner can only add an item ONCE
+        //         temp[food.name] = ' ';
+        //
+        //
+        //     }
+        //
+        //
+        // }
 
-            //add the selected food item into the list
-            if (temp[food.name] === undefined) {
-                var foodItem = [food.name, foodSize];
-
-                foodList.push(foodItem);
-
-
-                // calculate the price
-                $scope.totalPrice = calculateTotalPrice(foodList);
-
-                //this is to ensure that owner can only add an item ONCE
-                temp[food.name] = ' ';
-
-
-            }
-
-
-        }
-
-        $scope.calculateCheck = function (checkBox, foodItem, foodList, size) {
-
-
-            if (checkBox[foodItem[0]][size]) {
-                foodItem[1][size]['qty'] = 1;
-            } else {
-                foodItem[1][size]['qty'] = 0;
-            }
-
-
-            foodItem[1][size]['amount'] = calculatePrice(foodItem, size);
-            $scope.totalPrice = calculateTotalPrice(foodList);
-            // console.log("foodItem is: ", foodItem);
-            // for(var i in foodList){
-            //     if(foodList[i][0] === foodItem[0]){
-            //         foodList[i] = foodItem;
-            //     }
-            // }
-        }
+        // $scope.calculateCheck = function (checkBox, foodItem, foodList, size) {
+        //
+        //
+        //     if (checkBox[foodItem[0]][size]) {
+        //         foodItem[1][size]['qty'] = 1;
+        //     } else {
+        //         foodItem[1][size]['qty'] = 0;
+        //     }
+        //
+        //
+        //     foodItem[1][size]['amount'] = calculatePrice(foodItem, size);
+        //     $scope.totalPrice = calculateTotalPrice(foodList);
+        //
+        // }
 
         $scope.addQty = function (index, foodItem, foodList, size) {
 
@@ -142,13 +139,13 @@ angular.module('MainCtrl', [])
 
         }
 
-        $scope.removeItem = function(foodItem, foodList, index){
+        $scope.removeItem = function (foodItem, foodList, index) {
             console.log("foodItem is: ", foodItem);
             console.log("foodList is: ", foodList);
             console.log("index is: ", index);
             var foodListCopy = foodList.slice();
             foodListCopy.reverse();
-            foodListCopy = foodListCopy.splice(index,0);
+            foodListCopy = foodListCopy.splice(index, 0);
             console.log("foodListCopy is: ", foodListCopy);
             foodList = foodListCopy;
 
@@ -183,13 +180,13 @@ angular.module('MainCtrl', [])
             return totalPrice;
         }
 
-        $scope.processCheckout = function (foodList, totalPrice, checkBox) {
-            // checkOutItems.setVal(foodList, totalPrice);
-            sessionService.set('foodList', JSON.stringify(foodList));
-            sessionService.set('checkBox', JSON.stringify(checkBox));
-            sessionService.set('totalPrice', totalPrice);
-            $location.path('/checkout');
-        }
+        // $scope.processCheckout = function (foodList, totalPrice, checkBox) {
+        //     // checkOutItems.setVal(foodList, totalPrice);
+        //     sessionService.set('foodList', JSON.stringify(foodList));
+        //     sessionService.set('checkBox', JSON.stringify(checkBox));
+        //     sessionService.set('totalPrice', totalPrice);
+        //     $location.path('/checkout');
+        // }
 
     }])
 
@@ -225,4 +222,17 @@ angular.module('MainCtrl', [])
         service.unset = function (key) {
             sessionStorage.removeItem(key);
         };
-    });
+    })
+
+    .service('selectedItem', [function () {
+        var selectedItem = "";
+
+        return {
+            getSelectedItem: function () {
+                return selectedItem;
+            },
+            setVal: function (setSelectedItem) {
+                selectedItem = setSelectedItem;
+            }
+        };
+    }])

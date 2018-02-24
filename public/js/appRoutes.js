@@ -21,6 +21,10 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 			templateUrl: 'views/confirmpayment.html',
 			controller: 'ConfirmController'
 		})
+		.when('/selectedItem',{
+			templateUrl: 'views/selectedItem.html',
+			controller: 'SelectedItemController'
+		})
 		;
 
 	 $locationProvider.html5Mode(true);
