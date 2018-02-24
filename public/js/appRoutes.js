@@ -33,6 +33,14 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 			templateUrl: 'views/facebookLogin.html',
 			controller: 'FacebookController'
 		})
+		.when('/shipping',{
+			templateUrl: 'views/shipping.html',
+			controller: 'ShippingController'
+		})
+		.when('/raidParticipation',{
+			templateUrl: 'views/raidparticipation.html',
+			controller: 'RaidParticipationController'
+		})
 		;
 
 	 $locationProvider.html5Mode(true);
