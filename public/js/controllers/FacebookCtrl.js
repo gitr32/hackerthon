@@ -41,6 +41,14 @@ angular.module('FacebookCtrl', [])
         }, {scope: 'public_profile,email'});
       }
 
+      $scope.accessTokenExists = function () {
+        if (facebookService.getAccessToken() !== '') {
+          return true;
+        }
+
+        return false;
+      }
+
       function fetchUserDetail() {
         FB.api('/me', function(response) {
             console.log('FETCHING USER DETAILS');
