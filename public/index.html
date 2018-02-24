@@ -105,10 +105,18 @@
         <!--<md-tooltip md-direction="bottom"> Dashboard </md-tooltip>-->
         <!--<ng-md-icon icon="important_devices"></ng-md-icon>-->
         <!--</md-button>-->
+
+        
         <md-nav-bar class="dashboard-nav-bar" md-selected-nav-item="dashboard.currentNavItem"
                     nav-bar-aria-label="navigation links" flex>
             <span flex></span>
             <div class="dashboard-nav-bar-btn" layout="row">
+                <div ng-controller="AppController">
+                    <md-button class="md-raised md-primary" ng-click="checkFacebookLogin()">
+                        Facebook Login
+                    </md-button>
+                </div>
+                
                 <md-button class="md-icon-button" aria-label="Logout" ui-sref="login">
                     <md-tooltip md-direction="bottom"> Logout</md-tooltip>
                     <ng-md-icon icon="logout"></ng-md-icon>
