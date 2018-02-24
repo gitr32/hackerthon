@@ -1,1 +1,1 @@
-angular.module('VAProject', ['ngRoute', 'appRoutes', 'ngMaterial', 'ngMdIcons', 'ngWebSocket', 'appDirective', 'MainCtrl', 'DashboardCtrl', 'DashboardService', 'DashboardDirective', 'firebase','CheckoutCtrl','ConfirmCtrl','SelectedItemCtrl']);
+angular.module('VAProject', ['ngRoute', 'appRoutes', 'ngMaterial', 'ngMdIcons', 'ngWebSocket', 'appDirective', 'MainCtrl', 'DashboardCtrl', 'DashboardService', 'DashboardDirective', 'firebase','CheckoutCtrl','ConfirmCtrl','SelectedItemCtrl', 'FacebookCtrl']);
