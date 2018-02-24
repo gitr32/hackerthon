@@ -1,10 +1,98 @@
 <div ng-app="CheckoutCtrl">
     <div flex="100">
         <h2>Checkout</h2>
+        <div>
+            <md-grid-list md-cols-xs="1" md-cols-sm="2" md-cols-md="4" md-cols-gt-md="6" md-row-height-gt-md="1:1" md-row-height="2:2"
+                md-gutter="12px" md-gutter-gt-sm="8px">
+                <md-grid-tile class="checkoutInvoice" md-rowspan="2" md-colspan="3" md-colspan-sm="1" md-colspan-xs="1">
+                    <md-grid-tile-header>Invoice</md-grid-tile-header>
+                    <table class="mdl-data-table mdl-js-data-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>
+                                    Quantity
+                                </th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in cartItemsArr track by $index">
+                                <td>
+                                    {{item.name}}
+                                </td>
+                                <td>
+                                    {{item.qty}}
+                                </td>
+                                <td>
+                                    {{item.price}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td style="font-weight:bold; font-size:15px;">Shipping Fee</td>
+                                <td style="font-weight:bold; font-size:15px;">${{checkoutShippingFee}}</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td style="font-weight:bold; font-size:25px;">Total</td>
+                                <td style="font-weight:bold; font-size:25px;">${{checkoutTotal}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </md-grid-tile>
+
+                <md-grid-tile class="checkoutShippingOption" md-rowspan="2" md-colspan="3" md-colspan-sm="1" md-colspan-xs="1">
+                    <md-grid-tile-header>Select Shipping Option</md-grid-tile-header>
+                    <table class="mdl-data-table mdl-js-data-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>
+                                    Minimum Delivery Time (Days)
+                                </th>
+                                <th>Maximum Delivery Time (Days)</th>
+                                <th>Shipping Cost (USD)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="rate in courierRates track by $index">
+                                <td>
+                                    {{rate.courier_name}}
+                                </td>
+                                <td>
+                                    {{rate.min_delivery_time}}
+                                </td>
+                                <td>
+                                    {{rate.max_delivery_time}}
+                                </td>
+                                <td>
+                                    {{rate.total_charge}}
+                                </td>
+                            </tr>
+                            <tr> 
+                                <td colspan=1>
+                                    Select Shipping Option
+                                </td>
+                                <td colspan=3>
+                                    <md-select ng-model="shippingCost">
+                                        <md-option ng-click="showShippingFeeAndCalculateTotal(rate.total_charge)" ng-repeat="rate in courierRates track by $index">{{rate.courier_name}}</md-option>
+                                    </md-select>
+
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </md-grid-tile>
+
+            </md-grid-list>
+        </div>
 
         <md-content layout-padding>
             <div>
-                <form name="checkoutForm">
+                <form name="checkoutForm" action="/charge" method="post" id="payment-form">
 
                     <div layout-gt-sm="row">
                         <md-input-container class="md-block" flex-gt-sm>
@@ -26,14 +114,11 @@
 
                         <md-input-container class="md-block">
                             <label>Postal Code</label>
-                            <input name="postalCode" ng-model="user.postalCode" placeholder="123456" required ng-pattern="/^[0-9]{5}$/" md-maxlength="6">
+                            <input name="postalCode" ng-model="user.postalCode" placeholder="123456" required md-maxlength="6">
 
                             <div ng-messages="userForm.postalCode.$error" role="alert" multiple>
                                 <div ng-message="required" class="my-message">You must supply a postal code.</div>
                                 <div ng-message="pattern" class="my-message">That doesn't look like a valid postal code.
-                                </div>
-                                <div ng-message="md-maxlength" class="my-message">
-                                    Don't use the long version silly...we don't need to be that specific...
                                 </div>
                             </div>
                         </md-input-container>
@@ -43,17 +128,18 @@
                         <label for="card-element">
                             Credit or debit card
                         </label>
-                        <div id="card-element">
+                    </div>
+                    <div>
+                        <div style="width: 30em" id="card-element">
                             <!-- A Stripe Element will be inserted here. -->
                         </div>
-
                         <!-- Used to display form errors. -->
-                        <div id="card-errors" role="alert"></div>
+                        <span style="width: 30em; height: 2em; letter-spacing: 0em" id="card-errors" role="alert"></span>
                     </div>
-
+                    <br>
+                    <md-button type="submit" class="md-raised md-primary">Checkout</md-button>
                 </form>
             </div>
         </md-content>
-        <md-button class="md-raised md-primary" href="/checkout">Checkout</md-button>
     </div>
 </div>
