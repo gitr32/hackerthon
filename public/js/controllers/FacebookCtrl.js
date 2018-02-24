@@ -17,7 +17,7 @@ angular.module('FacebookCtrl', [])
          fjs.parentNode.insertBefore(js, fjs);
        }(document, 'script', 'facebook-jssdk'));
       
-      $scope.shareURL = 'https://www.facebook.com/keefe21';
+      $scope.shareURL = 'https://firebasestorage.googleapis.com/v0/b/epayment-f5b97.appspot.com/o/luxury_watch_2.jpg?alt=media&token=3f270a93-eb1e-4a8a-8dd1-b233c8ac3850';
 
       $scope.checkFacebookLogin = function() {
         FB.getLoginStatus(function(response) {

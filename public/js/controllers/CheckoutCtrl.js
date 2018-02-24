@@ -146,7 +146,7 @@ angular.module('CheckoutCtrl', [])
                     $scope.currentUserStripeToken = result.token;
 
                     // Redirect user to select shipment page
-                    $window.location.href = '/raidParticipation';
+                    $window.location.href = '/raidInfo';
 
                     // Send the token to your server.
                     // stripeTokenHandler(result.token);

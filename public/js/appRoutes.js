@@ -47,6 +47,7 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 		})
 		.when('/raidInfo',{
 			templateUrl: 'views/raidInfo.html',
+			controller: 'FacebookController'
 		})
 		
 		;
