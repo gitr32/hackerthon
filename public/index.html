@@ -1,140 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-	<base href="/">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <base href="/">
 
-	<title>Starter Node and Angular</title>
+    <title>Starter Node and Angular</title>
 
-	<!-- CSS -->
-	
-	<link rel="stylesheet" href="libs/angular-material/angular-material.css">
-	<link rel="stylesheet" href="libs/angular-material-icons/angular-material-icons.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
-	
-	<!--MATERIAL DESIGN LITE-->
-	<link rel="stylesheet" href="libs/material-design-lite/material.min.css"> 
-	<!--BOOTSTRAP STYLESHEET-->
-	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="libs/dc-addons/dist/dc-addons.min.css">
-	<link rel="stylesheet" href="libs/dcjs/dc.min.css">
-	<link rel="stylesheet" href="css/style.css"> <!-- custom styles -->
+    <!-- CSS -->
 
-	<!-- FONTS -->
-	<link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="libs/angular-material/angular-material.css">
+    <link rel="stylesheet" href="libs/angular-material-icons/angular-material-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-	<!--ANGULAR FIREBASE-->
-	<script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
-	<script>
-		// Initialize Firebase
-		var config = {
-			apiKey: "AIzaSyBb03-IsuuySE6A4Q_CI9tSxzyFQgNqr28",
-			authDomain: "epayment-f5b97.firebaseapp.com",
-			databaseURL: "https://epayment-f5b97.firebaseio.com",
-			projectId: "epayment-f5b97",
-			storageBucket: "epayment-f5b97.appspot.com",
-			messagingSenderId: "277788509737"
-		};
-		firebase.initializeApp(config);
-	</script>
+    <!--MATERIAL DESIGN LITE-->
+    <link rel="stylesheet" href="libs/material-design-lite/material.min.css">
+    <!--BOOTSTRAP STYLESHEET-->
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="libs/dc-addons/dist/dc-addons.min.css">
+    <link rel="stylesheet" href="libs/dcjs/dc.min.css">
+    <link rel="stylesheet" href="css/style.css"> <!-- custom styles -->
 
-	<!-- JS -->
-	<script src="libs/angular/angular.min.js"></script>
-	<script src="libs/angular-route/angular-route.min.js"></script>
-	<script src="libs/angular-animate/angular-animate.min.js"></script>
-	<script src="libs/angular-aria/angular-aria.min.js"></script>
-	<script src="libs/angular-material/angular-material.min.js"></script>
-	<script src="libs/angular-material-icons/angular-material-icons.min.js"></script>
-	<script src="libs/angular-websocket/dist/angular-websocket.js"></script>
-	<!-- Angularfire -->
-	<script src="libs/angularfire/dist/angularfire.min.js"></script>
-	<!-- D3 & DC -->
-	<script src="libs/d3/d3.js"></script>
-	<script src="libs/crossfilter2/crossfilter.min.js"></script>
-	<script src="libs/dcjs/dc.js"></script>
-	<script src="libs/dc-addons/dist/dc-addons.js"></script>
-	<!--MATERIAL DESIGN LITE JAVASCRIPT & FONT STYLE SHEET-->
-	<script src="libs/material-design-lite/material.min.js"></script>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
 
-	<!-- ANGULAR CUSTOM -->
-	<script src="js/controllers/MainCtrl.js"></script>
-	<script src="js/controllers/DashboardCtrl.js"></script>
-	<script src="js/services/DashboardService.js"></script>
-	<script src="js/directives/DashboardDirective.js"></script>
-	<script src="js/appRoutes.js"></script>
-	<script src="js/controllers/CartCtrl.js"></script>
-	<script src="js/controllers/CheckoutCtrl.js"></script>
-	<script src="js/controllers/ConfirmCtrl.js"></script>
-	<script src="js/appDirectives.js"></script>
-	<script src="js/app.js"></script>
-	<script src="https://js.stripe.com/v3/"></script>
+    <!--ANGULAR FIREBASE-->
+    <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBb03-IsuuySE6A4Q_CI9tSxzyFQgNqr28",
+            authDomain: "epayment-f5b97.firebaseapp.com",
+            databaseURL: "https://epayment-f5b97.firebaseio.com",
+            projectId: "epayment-f5b97",
+            storageBucket: "epayment-f5b97.appspot.com",
+            messagingSenderId: "277788509737"
+        };
+        firebase.initializeApp(config);
+    </script>
 
-	<!--JQUERY-->
-	<script src="libs/jquery/dist/jquery.min.js"></script>
-	<!--BOOTSTRAP JAVASCRIPT-->
-	<script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
-	<!--MOMENT.JS -->
-	<script src="libs/moment/moment.js"></script>
+    <!-- JS -->
+    <script src="libs/angular/angular.min.js"></script>
+    <script src="libs/angular-route/angular-route.min.js"></script>
+    <script src="libs/angular-animate/angular-animate.min.js"></script>
+    <script src="libs/angular-aria/angular-aria.min.js"></script>
+    <script src="libs/angular-material/angular-material.min.js"></script>
+    <script src="libs/angular-material-icons/angular-material-icons.min.js"></script>
+    <script src="libs/angular-websocket/dist/angular-websocket.js"></script>
+    <!-- Angularfire -->
+    <script src="libs/angularfire/dist/angularfire.min.js"></script>
+    <!-- D3 & DC -->
+    <script src="libs/d3/d3.js"></script>
+    <script src="libs/crossfilter2/crossfilter.min.js"></script>
+    <script src="libs/dcjs/dc.js"></script>
+    <script src="libs/dc-addons/dist/dc-addons.js"></script>
+    <!--MATERIAL DESIGN LITE JAVASCRIPT & FONT STYLE SHEET-->
+    <script src="libs/material-design-lite/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
+    <!-- ANGULAR CUSTOM -->
+    <script src="js/controllers/MainCtrl.js"></script>
+    <script src="js/controllers/DashboardCtrl.js"></script>
+    <script src="js/services/DashboardService.js"></script>
+    <script src="js/directives/DashboardDirective.js"></script>
+    <!--<script src="js/controllers/NerdCtrl.js"></script>-->
+    <!--<script src="js/services/NerdService.js"></script>-->
+    <!--<script src="js/controllers/GeekCtrl.js"></script>-->
+    <!--<script src="js/services/GeekService.js"></script>-->
+    <script src="js/appRoutes.js"></script>
+    <script src="js/controllers/CheckoutCtrl.js"></script>
+    <script src="js/controllers/CartCtrl.js"></script>
+    <script src="js/controllers/ConfirmCtrl.js"></script>
+    <script src="js/controllers/SelectedItem.js"></script>
+    <script src="js/controllers/FacebookCtrl.js"></script>
+    <script src="js/appDirectives.js"></script>
+    <script src="js/app.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
 
+    <!--JQUERY-->
+    <script src="libs/jquery/dist/jquery.min.js"></script>
+    <!--BOOTSTRAP JAVASCRIPT-->
+    <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!--MOMENT.JS -->
+    <script src="libs/moment/moment.js"></script>
 
 </head>
 <body ng-app="VAProject">
-	<md-toolbar class="dashboard-toolbar md-whiteframe-1dp">
-		<div class="md-toolbar-tools" style="background:#333333">
-			<!--
-			<md-button class="md-icon-button" aria-label="dehaze" ui-sref="menu" ng-click="toggleMenu()">
-				<md-tooltip md-direction="bottom"> Menu </md-tooltip>
-				<ng-md-icon icon="dehaze"></ng-md-icon>
-			</md-button>
-			-->
-			<div class="bf-logo">Point-of-Sale System</div>
-			<md-button class="md-icon-button" aria-label="payment" ui-sref="menu" href="/">
-				<md-tooltip md-direction="bottom"> Point-of-Sale System </md-tooltip>
-				<ng-md-icon icon="payment"></ng-md-icon>
-			</md-button>	
-			<md-button class="md-icon-button" aria-label="important_devices" ui-sref="menu" href="/dashboard">
-					<md-tooltip md-direction="bottom"> Dashboard </md-tooltip>
-					<ng-md-icon icon="important_devices"></ng-md-icon>
-			</md-button>
-			<md-nav-bar class="dashboard-nav-bar" md-selected-nav-item="dashboard.currentNavItem" nav-bar-aria-label="navigation links" flex>
-				<span flex></span>
-				<div class="dashboard-nav-bar-btn" layout="row">
-					<md-button class="md-icon-button" aria-label="Logout" ui-sref="login">
-						<md-tooltip md-direction="bottom"> Logout </md-tooltip>
-						<ng-md-icon icon="logout"></ng-md-icon>
-					</md-button>
-				</div>
-			</md-nav-bar>
-		</div>
-	</md-toolbar>
+<md-toolbar class="dashboard-toolbar md-whiteframe-1dp">
+    <div class="md-toolbar-tools" style="background:#333333">
+        <!--
+        <md-button class="md-icon-button" aria-label="dehaze" ui-sref="menu" ng-click="toggleMenu()">
+            <md-tooltip md-direction="bottom"> Menu </md-tooltip>
+            <ng-md-icon icon="dehaze"></ng-md-icon>
+        </md-button>
+        -->
+        <div class="bf-logo">Point-of-Sale System</div>
+        <md-button class="md-icon-button" aria-label="payment" ui-sref="menu" href="/">
+            <md-tooltip md-direction="bottom"> Point-of-Sale System</md-tooltip>
+            <ng-md-icon icon="payment"></ng-md-icon>
+        </md-button>
+        <!--<md-button class="md-icon-button" aria-label="important_devices" ui-sref="menu" href="/dashboard">-->
+        <!--<md-tooltip md-direction="bottom"> Dashboard </md-tooltip>-->
+        <!--<ng-md-icon icon="important_devices"></ng-md-icon>-->
+        <!--</md-button>-->
+        <md-nav-bar class="dashboard-nav-bar" md-selected-nav-item="dashboard.currentNavItem"
+                    nav-bar-aria-label="navigation links" flex>
+            <span flex></span>
+            <div class="dashboard-nav-bar-btn" layout="row">
+                <md-button class="md-icon-button" aria-label="Logout" ui-sref="login">
+                    <md-tooltip md-direction="bottom"> Logout</md-tooltip>
+                    <ng-md-icon icon="logout"></ng-md-icon>
+                </md-button>
+            </div>
+        </md-nav-bar>
+    </div>
+</md-toolbar>
 
-	<!--
-	<md-sidenav class="md-sidenav-left" md-component-id="left" >
-		<md-toolbar class="md-theme-indigo">
-			<h1 class="md-toolbar-tools">Disabled Backdrop</h1>
-		</md-toolbar>
+<!--
+<md-sidenav class="md-sidenav-left" md-component-id="left" >
+    <md-toolbar class="md-theme-indigo">
+        <h1 class="md-toolbar-tools">Disabled Backdrop</h1>
+    </md-toolbar>
 
-		<md-content layout-margin>
-			<p> This sidenav is not showing any backdrop, where users can click on it, to close the sidenav. </p>
-			<md-button ng-click="toggleMenu()" class="md-accent">
-				  Close this Sidenav
-			</md-button>
-		</md-content>
-	</md-sidenav>
-	-->
+    <md-content layout-margin>
+        <p> This sidenav is not showing any backdrop, where users can click on it, to close the sidenav. </p>
+        <md-button ng-click="toggleMenu()" class="md-accent">
+              Close this Sidenav
+        </md-button>
+    </md-content>
+</md-sidenav>
+-->
 
-	<!--Material Design Lite Stylesheet CDN-->
-	<link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
-	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,500,400italic,700,700italic' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="//storage.googleapis.com/code.getmdl.io/1.0.1/material.teal-red.min.css" />
+<!--Material Design Lite Stylesheet CDN-->
+<link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,500,400italic,700,700italic'
+      rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="//storage.googleapis.com/code.getmdl.io/1.0.1/material.teal-red.min.css"/>
 
-	
-	<!-- ANGULAR DYNAMIC CONTENT -->
-	<div ng-view></div>
+
+<!-- ANGULAR DYNAMIC CONTENT -->
+<div ng-view></div>
 
 
 </body>

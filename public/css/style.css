@@ -1,6 +1,7 @@
 body {
     font-family: Raleway;
 }
+
 md-input-container {
     margin-top: 14px;
     margin-bottom: 0px;
@@ -13,7 +14,7 @@ md-input-container {
 .md-list-item-text > * {
     width: 100%;
     white-space: nowrap;
-    overflow:hidden !important;
+    overflow: hidden !important;
     text-overflow: ellipsis;
 }
 
@@ -29,9 +30,8 @@ md-card-avatar > img {
 }
 
 md-card-avatar ng-md-icon {
-    font-size: 0.8em ;
+    font-size: 0.8em;
 }
-
 
 md-card-avatar ng-md-icon svg {
     fill: #fff;
@@ -46,7 +46,7 @@ md-card-header-text h1 {
 }
 
 md-card md-card-header {
-    padding:8px;
+    padding: 8px;
     background-color: #2B6267;
 }
 
@@ -55,14 +55,14 @@ md-card md-card-header md-card-avatar {
     height: 20px;
 }
 
-md-card md-card-header md-card-avatar+md-card-header-text{
+md-card md-card-header md-card-avatar + md-card-header-text {
     color: #fff;
     max-height: 30px;
 }
 
-.md-media-sm card-media{
-    width:5%;
-    height:5%;
+.md-media-sm card-media {
+    width: 5%;
+    height: 5%;
 }
 
 .md-button.md-fab > ng-md-icon > svg {
@@ -78,15 +78,17 @@ md-card md-card-header md-card-avatar+md-card-header-text{
     text-align: center;
     line-height: normal;
     color: #4BABB4;
-  }
-.md-toast-done .md-toast-content{
+}
+
+.md-toast-done .md-toast-content {
     background: #38C118 !important;
-    text-align:center;
+    text-align: center;
     text-decoration-color: white;
     opacity: 0.8;
     font-size: large;
 
 }
+
 md-toast.md-top {
     left: 40%;
     margin-left: -100px;
@@ -97,12 +99,11 @@ md-toast.md-bottom {
     margin-left: -100px;
 }
 
-
 .mdl-card__title-text {
     font-size: 100% !important;
 }
 
-.centerContainer{
+.centerContainer {
     height: 50%;
     width: 100%;
     display: flex;
@@ -110,11 +111,12 @@ md-toast.md-bottom {
     align-items: center;
     justify-content: center;
 }
+
 .analytics-loading {
-	position: absolute;
-	top: 0;
-	margin-top: 0;
-	margin-left:-16px;
+    position: absolute;
+    top: 0;
+    margin-top: 0;
+    margin-left: -16px;
 }
 
 .dc-chart g.row text {
@@ -126,18 +128,22 @@ md-toast.md-bottom {
     text-anchor: end !important;
     transform: rotate(-45deg);
 }
+
 #ezlink_vs_cash > svg > g .axis text {
     text-anchor: end !important;
     transform: rotate(-45deg);
 }
+
 #revenuebymonth > svg > g .axis text {
     text-anchor: end !important;
     transform: rotate(-45deg);
 }
+
 #food_count > svg > g .axis text {
     text-anchor: end !important;
     transform: rotate(-45deg);
 }
+
 #hourly_performance > svg > g .axis text {
     text-anchor: end !important;
     transform: rotate(-45deg);
