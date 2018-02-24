@@ -10,19 +10,25 @@
     <br>
     <br>
     <!--<div ng-repeat="items in selectedItem">-->
-    <div layout="row" layout-wrap>
-        <img ng-src="{{selectedItem.imageUrl}}" style="margin: auto;width: 60%;border: 3px;padding: 10px;"/>
-        <!--<div layout="column" ng-cloak style="width:500px">-->
-            <!--<md-input-container class="md-block" flex-gt-sm>-->
-                <!--<label>Size</label>-->
-                <!--<md-select ng-model="">-->
-                    <!--<md-option ng-repeat="(key, value) in items.size" value="{{}}">-->
-                        <!--{{key}} : {{value}}-->
-                    <!--</md-option>-->
-                <!--</md-select>-->
-            <!--</md-input-container>-->
-        <!--</div>-->
-    </div>
+    <table>
+        <tr>
+            <td>
+                <div layout="row" layout-wrap>
+                    <img ng-src="{{selectedItem.imageUrl}}"
+                         style="margin: auto;width:80%;height:80%;border: 3px;padding: 10px;"/>
+                </div>
+            </td>
+            <td>
+                <md-input-container class="md-block md-body-2" style="width:500px">
+                    <b>Dimensions:</b>
+                    <br>
+                    {{dimensions.length}}x{{dimensions.breadth}}x{{dimensions.height}} mm
+                </md-input-container>
+                <br>
+                <md-button class="md-raised md-primary" ng-click="">Add To Cart</md-button>
+            </td>
+        </tr>
+    </table>
 
     <!--</div>-->
 </div>
