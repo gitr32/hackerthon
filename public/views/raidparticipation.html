@@ -10,8 +10,9 @@
 </head>
 <body>
     <br>
+    Total Group Discount Percentage (%)
     <div class="progress">
-        <div class="progress-bar" role="progressbar" style={{width}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="progress-bar" role="progressbar" style={{width}} aria-valuenow="25" aria-valuemin="0" aria-valuemax=100>{{groupDiscountPercentage}}</div>
     </div>
     <div style="display: flex ; flex: 1;">
         <div style="flex: 3; height: 300px;  background-color: red;"></div>
@@ -20,9 +21,9 @@
                 Original Price: {{price}} <br>
                 Individual Discount: {{individualDiscount}}<br>
                 Group Discount: {{groupDiscount}}<br>
-                Shipping: {{shipping}}<br>
+                Shipping: {{shippingCost}}<br>
                 <hr>
-                Total: {{total}}<br>
+                Total: {{totalCost}}<br>
             </div>
         </div>
     </div>
