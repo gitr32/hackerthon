@@ -16,6 +16,12 @@
             <tbody >
                 <tr ng-repeat="item in checkoutItem track by $index">
                     <td>
+                        <md-button class="md-icon-button"
+                                   ng-click="removeItem(item.$id)">
+                            <i class="material-icons" style="color:#D65555;font-size:30px; outline:none;">close</i>
+                        </md-button>
+                    </td>
+                    <td>
                         <img ng-src="{{item.imageUrl}}" style="max-height: 200px; max-width:200px" />
                     </td>
                     <td>

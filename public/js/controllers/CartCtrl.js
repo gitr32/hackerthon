@@ -8,6 +8,11 @@ angular.module('CartCtrl', [])
         var checkoutItem = $firebaseArray(transactRef);
         console.log("checkoutitem is ", checkoutItem);
 
+        $scope.removeItem = function(item){
+            console.log("item to remove: ", item);
+
+        }
+
         //method to assign total price to the cart
         checkoutItem.$loaded().then(function (menu) {
             //to bind the food menu dynamically

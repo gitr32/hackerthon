@@ -14,12 +14,13 @@ angular.module('SelectedItemCtrl', [])
 
             var fashionRef = firebase.database().ref().child('Cart')
             $scope.cartArr.$add({
-                category: "watch",
+                category: "watches",
                 imageUrl: selectedItem.imageUrl,
                 name: selectedItem.name,
                 price: selectedItem.price,
                 dimensions: selectedItem.dimensions,
-                qty: quantity
+                qty: quantity,
+                weight: selectedItem.weight
             }).then(function (ref) {
                 console.log("data added!");
                 $mdToast.show(
