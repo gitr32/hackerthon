@@ -24,6 +24,8 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 		.when('/selectedItem',{
 			templateUrl: 'views/selectedItem.html',
 			controller: 'SelectedItemController'
+		.when('/facebookLogin',{
+			templateUrl: 'views/facebookLogin.html'
 		})
 		;
 
