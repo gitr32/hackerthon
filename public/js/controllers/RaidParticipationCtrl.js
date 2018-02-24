@@ -49,7 +49,10 @@ angular.module('RaidParticipationCtrl', [])
 
             $scope.groupDiscountPercentage = currentMemberCount/maxMemberCount * maxDiscount + "%";
             $scope.groupDiscount = currentMemberCount/maxMemberCount * maxDiscount/100 * price;
-    
+            
+            $scope.currentMemberCount = currentMemberCount;
+            $scope.maxMemberCount = maxMemberCount; 
+
             $scope.width = "width: " + (currentMemberCount/maxMemberCount*100) + "%";
             $scope.max = maxDiscount;
 
