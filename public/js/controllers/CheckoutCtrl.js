@@ -9,6 +9,7 @@ angular.module('CheckoutCtrl', [])
 
         // method to assign total price to the cart
         $scope.showShippingFeeAndCalculateTotal = function (shippingCost) {
+            $scope.userSelectedShippingCost = shippingCost;
             transactRefArr.$loaded().then(function (menu) {
                 //must first check for keys, then bind it to the array
                 var totalPrice = 0;
