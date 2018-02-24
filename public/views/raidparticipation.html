@@ -18,7 +18,12 @@
         {{currentMemberCount}}/{{maxMemberCount}} Raid Members
         <br>
         <div style="display: flex ; flex: 1;">
-            <div style="flex: 3; height: 300px;  background-color: red;"></div>
+            <div style="flex: 3;">
+                <img ng-src="{{imageURL}}" style="max-height: 250px; height:200px; max-width:300px"/>
+                <br/>
+                <span>{{itemName}}</span><br/>
+                <span>{{itemCategory}}</span>
+            </div>
             <div style="flex: 1; height: 300px; padding: 40px">
                 <div style="flex: 1; color:rgb(55, 54, 54); padding: 20px">
                     Original Price: {{price}} <br>

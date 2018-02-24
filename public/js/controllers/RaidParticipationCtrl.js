@@ -26,13 +26,20 @@ angular.module('RaidParticipationCtrl', [])
         //to bind the food menu dynamically
         //must first check for keys, then bind it to the array
         // console.log("menu: ", menu);
+        
         var totalPrice = 0;
         for (var i in menu) {
             if (menu[i]['qty'] != undefined && menu[i]['price'] != undefined) {
                 totalPrice += (menu[i]['qty'] * menu[i]['price'])
+                $scope.imageURL = menu[i].imageUrl;
+                $scope.itemName = menu[i].name;
+                $scope.itemCategory = menu[i].category.toUpperCase();
             }
-
+            
         }
+
+        
+        
 
         $scope.price = totalPrice;
 
@@ -59,8 +66,4 @@ angular.module('RaidParticipationCtrl', [])
             $scope.totalCost = (totalPrice - $scope.individualDiscount - $scope.groupDiscount - $scope.shippingCost).toFixed(2);
         })
     })
-
-    
-    
-
 }])

@@ -1,5 +1,5 @@
 angular.module('VAProject', ['ngRoute', 'appRoutes', 'ngMaterial', 'ngMdIcons', 'ngWebSocket', 'appDirective', 'MainCtrl', 'DashboardCtrl', 'DashboardService', 'DashboardDirective', 'firebase','CheckoutCtrl','ConfirmCtrl','SelectedItemCtrl', 'FacebookCtrl', 'CartCtrl', 'ShippingCtrl', 'RaidParticipationCtrl'])
-.controller('AppController', ['$scope', '$routeParams', '$firebaseArray', '$firebaseObject', '$firebaseAuth', '$mdSidenav', 'facebookService', '$q',function ($scope, $routeParams, $firebaseArray, $firebaseObject, $firebaseAuth, $mdSidenav, facebookService, $q) {
+.controller('AppController', ['$scope', '$routeParams', '$firebaseArray', '$firebaseObject', '$firebaseAuth', '$mdSidenav', 'facebookService', '$q', '$location', function ($scope, $routeParams, $firebaseArray, $firebaseObject, $firebaseAuth, $mdSidenav, facebookService, $q, $location) {
   window.fbAsyncInit = function() {
     FB.init({
       appId            : '198059907448254',
