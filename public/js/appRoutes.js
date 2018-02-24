@@ -13,9 +13,9 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 			controller: 'DashboardController',
 			controllerAs: 'dashboard'
 		})
-		.when('/checkout',{
-			templateUrl: 'views/checkout.html',
-			controller: 'CheckoutController'
+		.when('/cart',{
+			templateUrl: 'views/cart.html',
+			controller: 'CartController'
 		})
 		.when('/confirm',{
 			templateUrl: 'views/confirmpayment.html',
