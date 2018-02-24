@@ -96,9 +96,9 @@
             <ng-md-icon icon="dehaze"></ng-md-icon>
         </md-button>
         -->
-        <div class="bf-logo">Point-of-Sale System</div>
+        <div class="bf-logo">Kray Kray System</div>
         <md-button class="md-icon-button" aria-label="payment" ui-sref="menu" href="/">
-            <md-tooltip md-direction="bottom"> Point-of-Sale System</md-tooltip>
+            <md-tooltip md-direction="bottom">Kray Kray Services</md-tooltip>
             <ng-md-icon icon="payment"></ng-md-icon>
         </md-button>
         <!--<md-button class="md-icon-button" aria-label="important_devices" ui-sref="menu" href="/dashboard">-->
@@ -112,6 +112,10 @@
             <span flex></span>
             <div class="dashboard-nav-bar-btn" layout="row">
                 <div ng-controller="AppController">
+                    <md-button class="md-icon-button" ng-click="processCart()">
+                        <md-tooltip md-direction="bottom">Go to cart</md-tooltip>
+                        <i class="material-icons" style="font-size:30px">shopping_cart</i>
+                    </md-button>
                     <md-button class="md-raised md-primary" ng-click="checkFacebookLogin()">
                         Facebook Login
                     </md-button>

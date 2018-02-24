@@ -19,15 +19,29 @@
                 </div>
             </td>
             <td>
-                <md-input-container class="md-block md-body-2" style="width:500px">
-                    <b>Dimensions:</b>
-                    <br>
-                    {{dimensions.length}}x{{dimensions.breadth}}x{{dimensions.height}} mm
-                </md-input-container>
+                <!--<md-input-container class="md-block md-body-2" style="width:500px">-->
+                <b>Dimensions:</b>
+                {{dimensions.length}}x{{dimensions.width}}x{{dimensions.height}} mm
                 <br>
-                <md-button class="md-raised md-primary" ng-click="">Add To Cart</md-button>
+                Quantity
+                <md-select ng-model="quantity" style="width:100px">
+                    <md-option value="1" selected>1</md-option>
+                    <md-option value="2">2</md-option>
+                    <md-option value="3">3</md-option>
+                    <md-option value="4">4</md-option>
+                    <md-option value="5">5</md-option>
+                </md-select>
+                <md-button class="md-raised md-primary" ng-click="processAddToCart(quantity, selectedItem)">Add To Cart</md-button>
+                <!--</md-input-container>-->
             </td>
         </tr>
+        <tr>
+            <td>
+
+
+            </td>
+        </tr>
+
     </table>
 
     <!--</div>-->
