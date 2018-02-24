@@ -32,21 +32,21 @@ angular.module('CheckoutCtrl', [])
         $scope.showShippingFeeAndCalculateTotal();
 
         // Get shipping rates
-        var items = [];
+        var itemsArr = [];
         transactRefArr.$loaded().then(function (cartItems) {
             for (var i in cartItems) {
                 var itemToAppend = {};
                 var currentItemDimensions = cartItems[i]['dimensions'];
                 if (cartItems[i]['qty'] != undefined && cartItems[i]['price'] != undefined) {
-                    itemToAppend['actual_weight'] = currentItemDimensions['weight'];
-                    itemToAppend['height'] = currentItemDimensions['height'];
-                    itemToAppend['width'] = currentItemDimensions['width'];
-                    itemToAppend['length'] = currentItemDimensions['length'];
-                    itemToAppend['category'] = 'watch';
+                    itemToAppend['actual_weight'] = cartItems[i]['weight'];
+                    itemToAppend['height'] = 1;
+                    itemToAppend['width'] = 1;
+                    itemToAppend['length'] = 1;
+                    itemToAppend['category'] = 'watches';
                     itemToAppend['declared_currency'] = 'USD';
-                    itemToAppend['declared_customs_value'] = cartItems[i]['price'];
+                    itemToAppend['declared_customs_value'] = 10;
 
-                    items.push(itemToAppend);
+                    itemsArr.push(itemToAppend);
                 }
             }
         })
@@ -71,20 +71,21 @@ angular.module('CheckoutCtrl', [])
                     destination_postal_code: '45373',
                     taxes_duties_paid_by: 'Receiver',
                     is_insured: true,
-                    items:
+                    items: 
                         [{
                             actual_weight: 10,
                             height: 1,
                             width: 1,
                             length: 1,
-                            category: 'documents',
+                            category: 'watches',
                             declared_currency: 'USD',
                             declared_customs_value: 36.79
-                        }]
+                        }
+                    ]
                 },
             json: true
         };
-
+        
         $http(options)
             .then(function successCallback(response) {
                 $scope.courierRates = response.data.rates;
