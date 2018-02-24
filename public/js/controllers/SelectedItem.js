@@ -4,6 +4,11 @@ angular.module('SelectedItemCtrl', [])
         var selectedItem = selectedItem.getSelectedItem();
         console.log("selectedItem is: ", selectedItem);
         $scope.selectedItem = selectedItem;
+        $scope.dimensions = selectedItem.dimensions;
+        console.log("dimensions is: ", $scope.dimensions);
+
+
+        // $scope.fashionItemsSizes = selectedItem.size
 
 
 
